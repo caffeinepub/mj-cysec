@@ -1,0 +1,133 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-marketing-website-for-the-cybersecurity-startup-named-mj-cysec-with-a-clear-structure-polished-copy-in-english-and-strong-calls-to-action",
+      "featureTitle": "Create a responsive marketing website for the cybersecurity startup named “MJ CySec” with a clear structure, polished copy in English, and strong calls-to-action.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/SiteFooter.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-standard-marketing-pages-sections-suitable-for-a-cybersecurity-startup-home-hero-trust-value-props-services-about-and-contact",
+      "featureTitle": "Implement standard marketing pages/sections suitable for a cybersecurity startup: Home (hero + trust/value props), Services, About, and Contact.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/marketing/sections/AboutSection.tsx",
+        "frontend/src/components/marketing/sections/ContactSection.tsx",
+        "frontend/src/components/marketing/sections/HomeSection.tsx",
+        "frontend/src/components/marketing/sections/ServicesSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-contact-form-submission-flow-that-persists-submissions-in-the-motoko-canister-and-provides-a-success-error-state-in-the-ui",
+      "featureTitle": "Add a Contact form submission flow that persists submissions in the Motoko canister and provides a success/error state in the UI.",
+      "files": [
+        "frontend/src/components/marketing/ContactForm.tsx",
+        "frontend/src/components/marketing/sections/ContactSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-coherent-cybersecurity-appropriate-visual-theme-and-design-system-across-the-site-typography-spacing-components-and-color-palette-with-a-distinct-style-avoid-blue-purple-by-default",
+      "featureTitle": "Apply a coherent, cybersecurity-appropriate visual theme and design system across the site (typography, spacing, components, and color palette) with a distinct style (avoid blue/purple by default).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-basic-seo-and-social-sharing-metadata-for-mj-cysec-title-description-opengraph-twitter-card-and-ensure-the-site-has-a-clean-professional-browser-tab-title",
+      "featureTitle": "Add basic SEO and social sharing metadata for MJ CySec (title, description, OpenGraph/Twitter card) and ensure the site has a clean, professional browser tab title.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-brand-images-as-static-assets-in-the-frontend-store-them-under-frontend-public-assets-generated-and-use-them-in-the-layout-logo-in-header-footer-hero-visual-on-the-homepage-icons-in-services",
+      "featureTitle": "Render the generated brand images as static assets in the frontend (store them under frontend/public/assets/generated) and use them in the layout (logo in header/footer, hero visual on the homepage, icons in services).",
+      "files": [
+        "frontend/src/components/marketing/SiteFooter.tsx",
+        "frontend/src/components/marketing/SiteHeader.tsx",
+        "frontend/src/components/marketing/sections/HomeSection.tsx",
+        "frontend/src/components/marketing/sections/ServicesSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

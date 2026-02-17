@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create a marketing website for the cybersecurity startup MJ CySec.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Cybersecurity startup wordmark logo reading “MJ CySec”, modern geometric style, dark-mode friendly (mj-cysec-logo.dim_1024x256.png)\n- Abstract cybersecurity hero background with subtle network/mesh lines and glow accents on a dark charcoal base (mj-cysec-hero-bg.dim_1920x1080.png)\n- Set of 3 minimal line icons in a consistent style (shield, vulnerability scan, compliance checklist) on transparent background (mj-cysec-service-icons.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-marketing-website-for-the-cybersecurity-startup-named-mj-cysec-with-a-clear-structure-polished-copy-in-english-and-strong-calls-to-action",
+      "title": "Create a responsive marketing website for the cybersecurity startup named “MJ CySec” with a clear structure, polished copy in English, and strong calls-to-action.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-standard-marketing-pages-sections-suitable-for-a-cybersecurity-startup-home-hero-trust-value-props-services-about-and-contact",
+      "title": "Implement standard marketing pages/sections suitable for a cybersecurity startup: Home (hero + trust/value props), Services, About, and Contact.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-contact-form-submission-flow-that-persists-submissions-in-the-motoko-canister-and-provides-a-success-error-state-in-the-ui",
+      "title": "Add a Contact form submission flow that persists submissions in the Motoko canister and provides a success/error state in the UI.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-cybersecurity-appropriate-visual-theme-and-design-system-across-the-site-typography-spacing-components-and-color-palette-with-a-distinct-style-avoid-blue-purple-by-default",
+      "title": "Apply a coherent, cybersecurity-appropriate visual theme and design system across the site (typography, spacing, components, and color palette) with a distinct style (avoid blue/purple by default).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-seo-and-social-sharing-metadata-for-mj-cysec-title-description-opengraph-twitter-card-and-ensure-the-site-has-a-clean-professional-browser-tab-title",
+      "title": "Add basic SEO and social sharing metadata for MJ CySec (title, description, OpenGraph/Twitter card) and ensure the site has a clean, professional browser tab title.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-brand-images-as-static-assets-in-the-frontend-store-them-under-frontend-public-assets-generated-and-use-them-in-the-layout-logo-in-header-footer-hero-visual-on-the-homepage-icons-in-services",
+      "title": "Render the generated brand images as static assets in the frontend (store them under frontend/public/assets/generated) and use them in the layout (logo in header/footer, hero visual on the homepage, icons in services).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build a website for the cybersecurity startup MJ CySec.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "MJ CySec",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

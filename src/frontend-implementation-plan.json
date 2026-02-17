@@ -1,0 +1,206 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "MJ CySec marketing website (responsive, themed, SEO, contact flow)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive, well-structured MJ CySec marketing site with polished English copy and strong CTAs.",
+      "acceptanceCriteria": [
+        "Site renders correctly on mobile, tablet, and desktop screen sizes.",
+        "All user-facing text is in English and consistently branded as “MJ CySec”.",
+        "Homepage includes a clear value proposition and at least one prominent call-to-action (e.g., “Request a Consultation”)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the main marketing single-page app layout for “MJ CySec” with responsive sections (Home hero/value prop + primary CTA, Services, About, Contact) and a consistent content structure."
+        },
+        {
+          "path": "frontend/src/components/marketing/SiteHeader.tsx",
+          "operation": "create",
+          "description": "Create a responsive header with MJ CySec branding and a prominent CTA button; use composed shadcn/ui components (e.g., Button) without modifying immutable ui paths. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/SiteFooter.tsx",
+          "operation": "create",
+          "description": "Create a footer with MJ CySec branding, short credibility copy, and a secondary CTA; use composed shadcn/ui components (e.g., Button) without modifying immutable ui paths. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure App wiring remains correct for the new marketing site structure and keep the app wrapped in the existing providers (React Query + InternetIdentityProvider) as provided by the template."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement standard marketing sections: Home, Services, About, Contact with navigation and a complete contact form.",
+      "acceptanceCriteria": [
+        "Navigation provides access to Home, Services, About, and Contact.",
+        "Services section/page presents at least 3 service offerings with short descriptions.",
+        "About section/page includes company overview and mission statement copy (in English).",
+        "Contact section/page includes a contact form with name, email, company (optional), and message fields."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/sections/HomeSection.tsx",
+          "operation": "create",
+          "description": "Create the Home section (hero + trust/value props) with English copy for MJ CySec and at least one prominent CTA that scrolls users to the Contact section."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ServicesSection.tsx",
+          "operation": "create",
+          "description": "Create a Services section presenting at least 3 MJ CySec offerings (e.g., Security Assessments, Vulnerability Scanning, Compliance Readiness) using composed shadcn/ui cards/badges where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/AboutSection.tsx",
+          "operation": "create",
+          "description": "Create an About section including an MJ CySec overview and mission statement in English, styled consistently with the site design system."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create a Contact section containing the required form fields (name, email, optional company, message) and a clear submit affordance; compose shadcn/ui form controls without modifying immutable ui paths. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the four sections into the page in the correct order and connect header navigation links (anchors/scroll) to Home, Services, About, and Contact."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement the contact form submission UX with validation and success/error states, integrating with the existing backend canister contact submission capability.",
+      "acceptanceCriteria": [
+        "Submitting the contact form stores a timestamped submission (name, email, optional company, message) in the backend canister.",
+        "UI shows a clear success message after a successful submission and an error message if it fails.",
+        "Basic validation prevents empty required fields and invalid email format before submission.",
+        "A backend query method exists to list submissions (for future admin use), even if not exposed in the UI."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSubmitContactMessage.ts",
+          "operation": "create",
+          "description": "Create a hook that uses the existing actor (via useActor) to submit contact messages and exposes loading/success/error state for the Contact UI."
+        },
+        {
+          "path": "frontend/src/components/marketing/ContactForm.tsx",
+          "operation": "create",
+          "description": "Implement the contact form component with client-side validation (required fields + email format), and clear success/error UI states after submission; compose shadcn/ui inputs/buttons/alerts where available. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Wire ContactForm into the Contact section and ensure the section displays submission feedback states (success/error) clearly and accessibly."
+        },
+        {
+          "path": "frontend/src/backend.d.ts",
+          "operation": "modify",
+          "description": "Align frontend typing usage for the contact submission flow (e.g., required fields and timestamp handling) to match actual app usage; do not introduce new backend capabilities here."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a cohesive cybersecurity visual theme and design system (avoiding default blue/purple) with accessible interactive states.",
+      "acceptanceCriteria": [
+        "Theme is applied consistently across all pages/sections (buttons, cards, headings, links).",
+        "Color palette avoids default blue/purple styling unless required for accessibility states; overall aesthetic fits cybersecurity (e.g., charcoal/black with neon green accents).",
+        "All interactive elements have clear hover/focus states and meet basic accessibility expectations (e.g., visible focus ring)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styles (Tailwind directives + CSS variables if needed) to establish a charcoal/dark base with neon-green accent palette, consistent typography, spacing defaults, and visible focus rings."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens (colors/radius/shadows as needed) to support the MJ CySec dark cyber aesthetic while preserving accessibility states."
+        },
+        {
+          "path": "frontend/src/components/marketing/MarketingLayout.tsx",
+          "operation": "create",
+          "description": "Create a reusable layout wrapper that applies consistent section spacing, max-width container usage, and shared background treatments across Home/Services/About/Contact."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Adopt the MarketingLayout wrapper and ensure consistent styled components (buttons/cards/links) are used across all sections without modifying immutable shadcn/ui component sources. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add basic SEO + social sharing metadata and professional document titles for MJ CySec.",
+      "acceptanceCriteria": [
+        "Pages include a meaningful document title (at minimum the homepage).",
+        "Meta description and OpenGraph/Twitter metadata are present for the homepage.",
+        "Brand name “MJ CySec” appears in the title/metadata."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add homepage-focused metadata: updated title, meta description, OpenGraph tags, and Twitter card tags that include the “MJ CySec” brand name and a professional cybersecurity marketing description."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set/maintain a clean document title in-app (at minimum for the initial render) consistent with MJ CySec branding."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add generated brand images as static frontend assets and wire them into header/footer/hero/services.",
+      "acceptanceCriteria": [
+        "Generated images are placed under frontend/public/assets/generated and referenced directly by the frontend (not served via backend).",
+        "Logo appears in the site header and footer.",
+        "Hero background/illustration is used on the homepage.",
+        "Service icons are displayed alongside service offerings."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/mj-cysec-logo.dim_1024x256.png",
+          "operation": "create",
+          "description": "Add the generated MJ CySec wordmark logo as a static asset at frontend/public/assets/generated/mj-cysec-logo.dim_1024x256.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/mj-cysec-hero-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated MJ CySec hero background image as a static asset at frontend/public/assets/generated/mj-cysec-hero-bg.dim_1920x1080.png."
+        },
+        {
+          "path": "frontend/public/assets/generated/mj-cysec-service-icons.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated service icon set image as a static asset at frontend/public/assets/generated/mj-cysec-service-icons.dim_512x512.png."
+        },
+        {
+          "path": "frontend/src/components/marketing/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Reference and render the logo from frontend/public/assets/generated/mj-cysec-logo.dim_1024x256.png within the header layout (responsive sizing)."
+        },
+        {
+          "path": "frontend/src/components/marketing/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Reference and render the logo from frontend/public/assets/generated/mj-cysec-logo.dim_1024x256.png within the footer layout."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/HomeSection.tsx",
+          "operation": "modify",
+          "description": "Use the hero visual from frontend/public/assets/generated/mj-cysec-hero-bg.dim_1920x1080.png as part of the Home hero background/illustration treatment."
+        },
+        {
+          "path": "frontend/src/components/marketing/sections/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Display service icons alongside service offerings using frontend/public/assets/generated/mj-cysec-service-icons.dim_512x512.png (e.g., consistent cropping/positioning per service card)."
+        }
+      ]
+    }
+  ]
+}

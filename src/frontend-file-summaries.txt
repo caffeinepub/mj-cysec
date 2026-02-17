@@ -1,0 +1,14 @@
+{
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring dark charcoal backgrounds and neon green accents for cybersecurity theme, custom scrollbar, and accessibility focus states.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with cybersecurity-themed colors (charcoal/neon green), custom fonts (Inter, Space Grotesk), glow shadows, and fade-in animations.",
+  "frontend/index.html": "HTML entry point with SEO metadata, Open Graph tags, Twitter cards for MJ CySec, and Google Fonts preconnect for Inter and Space Grotesk.",
+  "frontend/src/App.tsx": "Main application component wrapping the site with ThemeProvider (dark mode default), rendering header, marketing sections (Home, Services, About, Contact), footer, and toast notifications.",
+  "frontend/src/components/marketing/SiteHeader.tsx": "Responsive header with MJ CySec logo, smooth-scroll navigation, mobile menu, and prominent CTA button; includes scroll-based background blur effect.",
+  "frontend/src/components/marketing/SiteFooter.tsx": "Footer component with MJ CySec branding, quick links, services list, contact info, social media icons, and Caffeine.ai attribution with UTM tracking.",
+  "frontend/src/components/marketing/sections/HomeSection.tsx": "Hero section with background image overlay, headline, value proposition, dual CTAs, and trust indicators showcasing 24/7 monitoring and compliance.",
+  "frontend/src/components/marketing/sections/ServicesSection.tsx": "Services showcase displaying six cybersecurity offerings (assessments, scanning, compliance, incident response, data protection, training) in responsive card grid with icons and features.",
+  "frontend/src/components/marketing/sections/AboutSection.tsx": "About section presenting MJ CySec mission statement, core values (mission-driven, transparent, excellence, proactive), and key statistics in responsive layout.",
+  "frontend/src/components/marketing/sections/ContactSection.tsx": "Contact section with business information (email, phone, hours) and embedded contact form in two-column responsive layout.",
+  "frontend/src/components/marketing/ContactForm.tsx": "Contact form component with validation using react-hook-form, handling name, email, company, subject, and message fields with success/error states and backend submission.",
+  "frontend/src/hooks/useQueries.ts": "React Query hook for submitting contact messages to the backend with toast notifications for success/error feedback and query invalidation."
+}

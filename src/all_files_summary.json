@@ -1,0 +1,23 @@
+{
+  "backend/main.mo": "Motoko canister handling user profiles and contact messages with access control and admin‑restricted queries.",
+  "feature_evidence.json": "Feature evidence report mapping implemented features to source files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing the purpose of key frontend files and components.",
+  "frontend/index.css": "Tailwind-based global styles defining OKLCH theme variables and dark-mode cybersecurity palette.",
+  "frontend/index.html": "HTML entry file including SEO metadata, Open Graph/Twitter tags, fonts, and React root mounting.",
+  "frontend/src/App.tsx": "Main React app rendering site sections, header/footer, dark-theme provider, and toast system.",
+  "frontend/src/components/marketing/ContactForm.tsx": "Form component with validation and backend submission, showing success/error alerts.",
+  "frontend/src/components/marketing/sections/AboutSection.tsx": "About page section showing mission text, values grid, and company stats.",
+  "frontend/src/components/marketing/sections/ContactSection.tsx": "Contact section with company info, hours, and an embedded contact form.",
+  "frontend/src/components/marketing/sections/HomeSection.tsx": "Hero section with background image, headline, CTAs, and trust indicators.",
+  "frontend/src/components/marketing/sections/ServicesSection.tsx": "Services grid listing cybersecurity offerings with icons, descriptions, and features.",
+  "frontend/src/components/marketing/SiteFooter.tsx": "Footer with branding, navigation links, social icons, and smooth-scroll section navigation.",
+  "frontend/src/components/marketing/SiteHeader.tsx": "Responsive header with scroll effects, navigation links, logo, and mobile menu toggling.",
+  "frontend/src/hooks/useActor.ts": "React hook creating and managing authenticated or anonymous backend actors with query invalidation.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and provider for managing Internet Identity authentication, exposing identity state, login, logout, and status helpers.",
+  "frontend/src/hooks/useQueries.ts": "Defines a React Query mutation for submitting contact messages via an actor, with success and error toasts and cache invalidation.",
+  "frontend/src/index.css": "Tailwind base styles and custom OKLCH color variables for light/dark themes, plus global typography, scrollbar, and focus styles.",
+  "frontend/src/main.tsx": "Initializes React app with QueryClientProvider and InternetIdentityProvider, then renders the App component.",
+  "frontend/src/utils/urlParams.ts": "Utility functions for reading, storing, persisting, and clearing URL and session-based parameters, including hash routing support.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending colors, animations, typography, breakpoints, and enabling plugins like typography, container queries, and animate.",
+  "project_state.json": "Project metadata describing goals, features, image requirements, and state for the MJ CySec marketing site."
+}

@@ -1,0 +1,81 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T01:24:37.913Z",
+  "summary": "The diff implements a one-page responsive marketing site with Home/Services/About/Contact sections, a contact form wired to a Motoko backend, a cybersecurity-themed dark design system, and homepage SEO/social metadata. However, the contact submission data model does not match the requested fields (company not stored as a distinct optional field), the backend listing method is admin-gated with added access-control/user-profile functionality not requested, and the Services section does not use the generated service icon asset set (it uses Lucide icons instead).",
+  "missing_requirements": [
+    {
+      "id": "REQ-3",
+      "requirement": "Persist contact submissions with name, email, optional company, message, and timestamp in the backend canister.",
+      "reason": "The backend `Message` type and submission flow do not store `company` as a distinct optional field; instead, the frontend concatenates company into the message string. This does not meet the requirement to persist company as its own field.",
+      "evidence": [
+        "backend/main.mo (type Message has name,email,subject,message,timestamp; no company)",
+        "frontend/src/components/marketing/ContactForm.tsx (company is embedded into `message` string)"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Display the generated set of 3 minimal line service icons (shield, vulnerability scan, compliance checklist) alongside service offerings.",
+      "reason": "Services are rendered with `lucide-react` icons rather than referencing the generated service icon image asset set under `/assets/generated/...`.",
+      "evidence": [
+        "frontend/src/components/marketing/sections/ServicesSection.tsx (imports and uses lucide-react icons; no generated icon image references)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added authorization/access-control system with admin-only queries and a secret admin token initialization flow.",
+      "reason": "The BuildRequest did not request any custom authorization system for this marketing site/contact form; it also stated no additional auth integrations beyond the template. This introduces extra auth logic and gating around listing messages.",
+      "evidence": [
+        "backend/main.mo (imports authorization modules; includes MixinAuthorization; admin checks in getAllContactMessages/getContactMessage)",
+        "frontend/src/hooks/useActor.ts (reads `caffeineAdminToken` and calls `_initializeAccessControlWithSecret`)"
+      ]
+    },
+    {
+      "description": "User profile storage and user-permission checks in the backend.",
+      "reason": "User accounts/profiles are explicitly a non-goal; the BuildRequest only required a contact submission store and a query method to list submissions.",
+      "evidence": [
+        "backend/main.mo (UserProfile type; getCallerUserProfile/getUserProfile/saveCallerUserProfile with permission checks)"
+      ]
+    },
+    {
+      "description": "Contact form includes a `subject` field and backend persists it.",
+      "reason": "The required contact form fields were name, email, optional company, and message; subject was not requested.",
+      "evidence": [
+        "frontend/src/components/marketing/ContactForm.tsx (ContactFormData includes `subject` and includes it in payload)",
+        "backend/main.mo (Message type includes `subject`)"
+      ]
+    },
+    {
+      "description": "Restriction of one contact submission per caller principal.",
+      "reason": "The BuildRequest did not specify limiting submissions; adding this constraint can block legitimate repeated inquiries.",
+      "evidence": [
+        "backend/main.mo (submitMessage traps if messageStore.containsKey(caller))"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/marketing/ContactForm.tsx",
+    "frontend/src/components/marketing/SiteFooter.tsx",
+    "frontend/src/components/marketing/SiteHeader.tsx",
+    "frontend/src/components/marketing/sections/AboutSection.tsx",
+    "frontend/src/components/marketing/sections/ContactSection.tsx",
+    "frontend/src/components/marketing/sections/HomeSection.tsx",
+    "frontend/src/components/marketing/sections/ServicesSection.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

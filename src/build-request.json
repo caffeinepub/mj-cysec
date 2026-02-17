@@ -1,0 +1,139 @@
+{
+  "kind": "build_request",
+  "title": "Marketing website for MJ CySec (cybersecurity startup)",
+  "projectName": "MJ CySec",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive marketing website for the cybersecurity startup named “MJ CySec” with a clear structure, polished copy in English, and strong calls-to-action.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a website for my cybersecurity start up name MJ CySec"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Site renders correctly on mobile, tablet, and desktop screen sizes.",
+        "All user-facing text is in English and consistently branded as “MJ CySec”.",
+        "Homepage includes a clear value proposition and at least one prominent call-to-action (e.g., “Request a Consultation”)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement standard marketing pages/sections suitable for a cybersecurity startup: Home (hero + trust/value props), Services, About, and Contact.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a website for my cybersecurity start up name MJ CySec"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Navigation provides access to Home, Services, About, and Contact.",
+        "Services section/page presents at least 3 service offerings with short descriptions.",
+        "About section/page includes company overview and mission statement copy (in English).",
+        "Contact section/page includes a contact form with name, email, company (optional), and message fields."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add a Contact form submission flow that persists submissions in the Motoko canister and provides a success/error state in the UI.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Create a website for my cybersecurity start up name MJ CySec"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Submitting the contact form stores a timestamped submission (name, email, optional company, message) in the backend canister.",
+        "UI shows a clear success message after a successful submission and an error message if it fails.",
+        "Basic validation prevents empty required fields and invalid email format before submission.",
+        "A backend query method exists to list submissions (for future admin use), even if not exposed in the UI."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a coherent, cybersecurity-appropriate visual theme and design system across the site (typography, spacing, components, and color palette) with a distinct style (avoid blue/purple by default).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Theme is applied consistently across all pages/sections (buttons, cards, headings, links).",
+        "Color palette avoids default blue/purple styling unless required for accessibility states; overall aesthetic fits cybersecurity (e.g., charcoal/black with neon green accents).",
+        "All interactive elements have clear hover/focus states and meet basic accessibility expectations (e.g., visible focus ring)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add basic SEO and social sharing metadata for MJ CySec (title, description, OpenGraph/Twitter card) and ensure the site has a clean, professional browser tab title.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Pages include a meaningful document title (at minimum the homepage).",
+        "Meta description and OpenGraph/Twitter metadata are present for the homepage.",
+        "Brand name “MJ CySec” appears in the title/metadata."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Render the generated brand images as static assets in the frontend (store them under frontend/public/assets/generated) and use them in the layout (logo in header/footer, hero visual on the homepage, icons in services).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are placed under frontend/public/assets/generated and referenced directly by the frontend (not served via backend).",
+        "Logo appears in the site header and footer.",
+        "Hero background/illustration is used on the homepage.",
+        "Service icons are displayed alongside service offerings."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Do not modify files under frontend/src/components/ui or any other immutable paths provided by the platform; compose them instead."
+  ],
+  "nonGoals": [
+    "No user accounts or third-party authentication integrations (beyond what the template provides).",
+    "No blog/CMS functionality.",
+    "No payments, subscriptions, or e-commerce features.",
+    "No real-time chat or WebSocket-based features."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cybersecurity startup wordmark logo reading “MJ CySec”, modern geometric style, dark-mode friendly (mj-cysec-logo.dim_1024x256.png)",
+      "Abstract cybersecurity hero background with subtle network/mesh lines and glow accents on a dark charcoal base (mj-cysec-hero-bg.dim_1920x1080.png)",
+      "Set of 3 minimal line icons in a consistent style (shield, vulnerability scan, compliance checklist) on transparent background (mj-cysec-service-icons.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}
